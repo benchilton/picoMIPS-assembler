@@ -19,19 +19,19 @@ You need to ensure that the instruction information is held within a field named
 
 With respect to registers, a range may be specified and the tool will automatically expand the range.
 An example is:
-  *"$t0-$t3" : [8 , 12],*
-This will be expanded to:
-*"$t0" : 8,*
-*"$t1" : 9,*
-*"$t2" : 10,*
-*"$t3" : 11,*
-However the ranges must match and be continuous.
+  *"$t0-$t3" : [8 , 12],*<br>
+This will be expanded to:<br>
+*"$t0" : 8,*<br>
+*"$t1" : 9,*<br>
+*"$t2" : 10,*<br>
+*"$t3" : 11,*<br>
+However the ranges must match and be continuous.<br>
 
-See the provided *picomips-instructions.json* file for an example.
+See the provided *picomips-instructions.json* file for an example.<br>
 
 ## Assembly constructions provided
 
-*;* used for single-line comments
+*;* used for single-line comments<br>
 /* */ used for multi-line comments
 
 ## Acknowledgements
