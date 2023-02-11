@@ -1,0 +1,42 @@
+cmd: cmake
+atomCommandName: "Compile and run project"
+name: "Compile and run project"
+args:
+  - -S .
+  - -B ./build
+  - ; cd build
+  - ; make
+  - ; ./builtProject
+targets:
+    Run:
+      cmd: " "
+      atomCommandName: "Run latest version of project"
+      args:
+        - ./build/builtProject
+    Build Project:
+      cmd: cmake
+      atomCommandName: "Build Project"
+      args:
+        - -S .
+        - -B ./build
+        - ; cd build
+        - ; make
+        - ; cp bin/builtProject .
+    Run CMake:
+        cmd: cmake
+        atomCommandName: "Create Makefiles with CMake"
+        args:
+          - -S .
+          - -B ./build
+    Build Makefile project:
+        atomCommandName: "Make all"
+        cmd: cd
+        args:
+          - build
+          - ; make
+    Clean Project:
+        atomCommandName: "Clear all"
+        cmd: rm -r
+        args:
+          - build
+          - ; mkdir build

@@ -1,0 +1,7 @@
+
+*.sv
+build/*
+build/bin/builtProject
+build/builtProject
+amogusdir
+*.hex
