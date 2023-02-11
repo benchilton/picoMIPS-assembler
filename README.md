@@ -11,6 +11,11 @@ This assembler does not support LW or SW instructions as the picoRISC does not h
 
 ## Tool Usage
 
+Usage of either command line arguments passing file paths from within the program.<br>
+*-b* or *--defines* to specify the architecture information<br>
+*-s* or *--source* to specify the source assembly file<br>
+*-o* or *--output* to specify the output file<br>
+
 Define your architectures instruction set and register information in *.json* format.
 
 You need to ensure that the register information is held within a field named *registers*
