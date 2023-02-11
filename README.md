@@ -18,14 +18,14 @@ You need to ensure that the instruction information is held within a field named
 
 
 With respect to registers, a range may be specified and the tool will automatically expand the range.
-An example is:
+An example is:<br>
   *"$t0-$t3" : [8 , 12],*<br>
-This will be expanded to:<br>
+Which will be expanded to:<br>
 *"$t0" : 8,*<br>
 *"$t1" : 9,*<br>
 *"$t2" : 10,*<br>
 *"$t3" : 11,*<br>
-However the ranges must match and be continuous.<br>
+The ranges and be continuous and increment the same amount.<br>
 
 See the provided *picomips-instructions.json* file for an example.<br>
 
