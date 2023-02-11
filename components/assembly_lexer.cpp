@@ -151,21 +151,11 @@ void assembly_lexer::remove_comments()
       comment_start_delim_pos = (comment_start_delim_pos == std::string::npos) ? 0 : comment_start_delim_pos ;
       this->read_line.erase( comment_start_delim_pos , comment_end_delim_pos );
   }
-  comment_start_delim_pos = this->read_line.find( "#" , 0 );
+  comment_start_delim_pos = this->read_line.find( ";" , 0 );
   if( comment_start_delim_pos != std::string::npos )
   {
       this->read_line = this->read_line.erase( comment_start_delim_pos , this->read_line.length() );
   }
-}
-
-std::string assembly_lexer::string_remove_delim( std::string line , std::string delim , size_t offset )
-{
-  size_t pos = line.find(delim , offset);
-  if( pos != std::string::npos )
-  {
-      line.erase( pos , delim.length() );
-  }
-  return line;
 }
 
 /***************************** - Public Functions - ********************************/

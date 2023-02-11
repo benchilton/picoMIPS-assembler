@@ -41,9 +41,6 @@ class assembly_lexer
     void        remove_comments();
     void        line_collect_subroutines();
 
-    std::string string_remove_delim( std::string line , std::string delim , size_t offset );
-
-
     std::thread    lexing_thread;
 
     std::string    source_file_path;
