@@ -14,6 +14,7 @@
 
 /******************************** - User Includes - ********************************/
 
+#include "input_handler.hpp"
 #include "components/includes/assembler.hpp"
 
 /*********************************** - Defines - ***********************************/
@@ -26,19 +27,21 @@
 
 int main( int argc, char *argv[] )
 {
+  input_handler handler(argc , argv);
 
-  std::string   instruction_set_path;
-  std::string   output_dir_path;
-  std::string   assembly_file;
+  std::string instruction_set_path = handler.get_instruction_path();
+  std::string assembly_file        = handler.get_source_path();
+  std::string output_dir_path      = handler.get_output_path();
 
-  std::ifstream file_check;
+  if( true == handler.successful() )
+  {
+    std::cout << "|" << instruction_set_path << "|" << std::endl;
+    std::cout << "|" << assembly_file << "|" << std::endl;
+    std::cout << "|" << output_dir_path << "|" << std::endl;
 
-  std::cout << "Provide path to Assembly instruction set\n";
-  std::cin >> instruction_set_path;
-  std::cout << "Going to " << instruction_set_path << std::endl;
-
-  file_check.open(instruction_set_path);
-
+    assembler a( instruction_set_path , assembly_file , output_dir_path );
+  }
+/*
   if( true == file_check.fail() )
   {
     std::cout << "❌ Failed to find file: " << instruction_set_path << std::endl;
@@ -62,6 +65,7 @@ int main( int argc, char *argv[] )
       assembler a( instruction_set_path , assembly_file , output_dir_path );
     }
   }
+*/
 }
 
 /***************************** - Private Functions - *******************************/

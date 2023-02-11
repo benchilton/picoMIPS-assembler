@@ -13,6 +13,7 @@ add_subdirectory(components)
 
 set(HEADER_FILES
       ${CMAKE_CURRENT_SOURCE_DIR}/includes/main.hpp
+      ${CMAKE_CURRENT_SOURCE_DIR}/includes/input_handler.hpp
     )
 
 set(HEADER_LOCATIONS
@@ -24,6 +25,7 @@ add_executable(${PROJECT}
   ${HEADER_FILES}
   ${COMPONENT_HEADERS}
   main.cpp
+  input_handler.cpp
 )
 
 target_include_directories( ${PROJECT} PUBLIC
