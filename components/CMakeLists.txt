@@ -16,5 +16,3 @@ target_include_directories( COMPONENTS PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}
   ${CMAKE_CURRENT_SOURCE_DIR}/includes
   )
-
-message(STATUS "AMOGUS")
