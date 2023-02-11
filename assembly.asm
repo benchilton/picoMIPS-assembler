@@ -21,6 +21,7 @@ Subroutine 2
 subroutine2:
     ADD $s0,$0
     ADD $s0,$t0
+    BEQ $s0,$t1,subroutine
     ADD $s1,$0
     ADD $s1,$t1
     ADDI $t0,$0,32   ; $t0 = $0 + 100
