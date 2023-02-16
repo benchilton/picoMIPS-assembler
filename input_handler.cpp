@@ -50,7 +50,7 @@ input_handler::input_handler(int argc , char** argv)
 std::string input_handler::get_instruction_path()
 {
   std::string ret_string;
-  if( false == output.empty() )
+  if( false == instructions.empty() )
   {
     ret_string = this->instructions;
   }
@@ -74,7 +74,7 @@ std::string input_handler::get_instruction_path()
 std::string input_handler::get_source_path()
 {
   std::string ret_string;
-  if( false == output.empty() )
+  if( false == source_assembly.empty() )
   {
     ret_string = this->source_assembly;
   }
