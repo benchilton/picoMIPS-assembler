@@ -1,4 +1,12 @@
 {
+  "branches" : "relative",
+  "widths" :
+  {
+    "opcodes"    : 6,
+    "immediates" : 8,
+    "addresses"  : 14,
+    "registers" : 8
+  },
   "registers" :
   {
     "$0"      : 0,
@@ -17,20 +25,17 @@
   "instructions" :
   {
     "ADD"   : 0,
-    "SUB"   : 1,
-    "ADDI"  : 2,
-    "ADDU"  : 3,
-    "SUBU"  : 4,
-    "ADDUI" : 5,
-    "MUL"   : 6,
-    "MULT"  : 7,
-    "AND"   : 9,
-    "OR"    : 10,
-    "ANDI"  : 11,
-    "ORI"   : 12,
-    "SLL"   : 13,
-    "SRL"   : 14,
-    "BEQ"   : 15,
-    "JAL"   : 16
+    "ADDI"  : 1,
+    "SUB"   : 4,
+    "SUBI"  : 5,
+    "MUL"   : 8,
+    "MULI"  : 9,
+
+    "BEQ"   : 6,
+    "JAL"   : 10
+  },
+  "microcode" :
+  {
+    "NOP" : "ADDI $0 $0"
   }
 }

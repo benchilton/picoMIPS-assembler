@@ -43,9 +43,14 @@ class assembler
 
     void                                    assemble_code();
     void                                    write_output_header();
+    void                                    write_output_footer();
 
-    std::string  assembler_process_token( std::string token , size_t iterations );
-    std::string convert_machine_code( std::string line );
+    std::tuple<std::size_t, ssize_t>        assembler_process_token( std::string token , size_t iterations );
+    std::tuple<std::string, std::size_t>    convert_machine_code( std::string line );
+
+    void                                    fill_field_widths(void);
+
+    void                                    JSON_neat_print( std::ostream& stream , std::string field , std::string line_start );
 
 //Private Data
 
@@ -65,6 +70,13 @@ class assembler
 
     size_t         current_line;
     std::string    line_contents;
+
+    size_t register_size;
+    size_t opcode_size;
+    size_t immediate_size;
+    size_t address_size;
+    size_t instruction_size;
+    bool   relative_branches;
 
 };
 
