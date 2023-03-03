@@ -1,8 +1,8 @@
 {
-  "branches" : "relative",
+  "branches" : "absolute",
   "widths" :
   {
-    "opcodes"    : 6,
+    "opcodes"    : 4,
     "immediates" : 8,
     "addresses"  : 14,
     "registers" : 8

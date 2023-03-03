@@ -64,7 +64,7 @@ assembler::assembler( std::string input_arch_info_loc , std::string source_assem
     this->json_processing_thread = std::thread( &assembler::process_arch_json , this );
     this->json_processing_thread.join();
     this->file_assembly_source.close();
-    std::cout << "assembling code with the following processor information:";
+    std::cout << "assembling code with the following processor information:" << std::endl;
     JSON_neat_print( std::cout , "registers" , "");
     JSON_neat_print( std::cout , "instructions" , "" );
     JSON_neat_print( std::cout , "widths" , "" );

@@ -1,8 +1,9 @@
 
 *.sv
 build/*
-build/bin/builtProject
-build/builtProject
-amogusdir
 *.hex
 *.asm
+CMakeFiles/*
+.vscode/settings.json
+.atom-build.yml
+.DS_Store
