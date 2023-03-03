@@ -33,9 +33,5 @@
 
     "BEQ"   : 6,
     "JAL"   : 10
-  },
-  "microcode" :
-  {
-    "NOP" : "ADDI $0 $0"
   }
 }
