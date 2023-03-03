@@ -27,7 +27,7 @@ The compiled binary will be found under build/bin/ named 'picoMIPs-assembler'.
 
 ### Tool Usage
 
-Usage of either command line arguments passing file paths from within the program.<br>
+Usage of either command line arguments or passing file paths from within the program.<br>
 *-b* or *--defines* to specify the architecture information<br>
 *-s* or *--source* to specify the source assembly file<br>
 *-o* or *--output* to specify the output file<br>
@@ -36,6 +36,8 @@ Define your architectures instruction set and register information in *.json* fo
 
 You need to ensure that the register information is held within a field named *registers*
 You need to ensure that the instruction information is held within a field named *instructions*
+You need to ensure that the instruction field widths is held within a field named *widths*
+You may choose if branches/jumps are either 'relative' or 'absolute' by the field named *branches*
 
 
 With respect to registers, a range may be specified and the tool will automatically expand the range.
