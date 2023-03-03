@@ -9,7 +9,23 @@ This tool was designed for use as a part of a coursework during my degree.
 The task of the coursework was to create a minimalistic picoRISC (picoMIPs) core using the minimum amount of hardware.
 This assembler does not support LW or SW instructions as the picoRISC does not have any data memory.
 
-## Tool Usage
+### Building the tool
+
+This tool uses the Conan package manager. In order to build the tool run the following set of commands:
+```
+mkdir build ; cd build
+conan install ..
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make
+```
+CMake will choose the generator with this method, a specific generator can be chosen with the command
+```
+cmake .. -G <Generator> -DCMAKE_BUILD_TYPE=Release
+```
+
+The compiled binary will be found under build/bin/ named 'picoMIPs-assembler'.
+
+### Tool Usage
 
 Usage of either command line arguments passing file paths from within the program.<br>
 *-b* or *--defines* to specify the architecture information<br>
