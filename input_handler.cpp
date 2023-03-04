@@ -49,73 +49,71 @@ input_handler::input_handler(int argc , char** argv)
 
 std::string input_handler::get_instruction_path()
 {
-  std::string ret_string;
-  if( false == instructions.empty() )
+  if( true == instructions.empty() )
   {
-    ret_string = this->instructions;
-  }
-  else
-  {
+
     std::ifstream source_file;
     std::cout << "No architecutre data file provided in arguments, provide file here:" << std::endl;
 
-    std::cin >> ret_string;
-    source_file.open(ret_string);
+    std::cin >> this->instructions;
+    source_file.open( this->instructions );
     if( true == source_file.fail() )
     {
-      std::cout << "❌ Failed to find file: " << ret_string << std::endl;
+      std::cout << "❌ Failed to find file: " << this->instructions << std::endl;
+      this->instructions.clear();
+    }
+    else
+    {
+      std::cout << "Found architecture description file " << this->instructions << std::endl;
     }
 
   }
 
-  return ret_string;
+  return this->instructions;
 }
 
 std::string input_handler::get_source_path()
 {
-  std::string ret_string;
-  if( false == source_assembly.empty() )
-  {
-    ret_string = this->source_assembly;
-  }
-  else
+  if( true == source_assembly.empty() )
   {
     std::ifstream source_file;
     std::cout << "No source file provided in arguments, provide file here:" << std::endl;
 
-    std::cin >> ret_string;
-    source_file.open(ret_string);
-    if( false == source_file.fail() )
+    std::cin >> this->source_assembly;
+    source_file.open( this->source_assembly );
+    if( true == source_file.fail() )
     {
-      std::cout << "❌ Failed to find file: " << ret_string << std::endl;
+      std::cout << "❌ Failed to find file: " << this->source_assembly << std::endl;
+      this->source_assembly.clear();
+    }
+    else
+    {
+      std::cout << "Found assembly source file " << this->source_assembly << std::endl;
     }
 
   }
 
-  return ret_string;
+  return this->source_assembly;
 }
 
 std::string input_handler::get_output_path()
 {
-  std::string ret_string;
-  if( false == this->output.empty() )
-  {
-    ret_string = this->output;
-  }
-  else
+  if( true == this->output.empty() )
   {
 
     std::cout << "No output file provided in arguments, provide file here:" << std::endl;
-    std::cin >> ret_string;
+    std::cin >> this->output;
+
+    std::cout << "Writing output machine code to " << this->output << std::endl;
 
   }
 
-  return ret_string;
+  return this->output;
 }
 
 bool input_handler::successful()
 {
-  return !(this->instructions.empty() && this->source_assembly.empty() && this->output.empty());
+  return (this->instructions.empty() == false ) && (this->source_assembly.empty() == false ) && ( this->output.empty() == false );
 }
 
 /******************************* - Private Methods - *******************************/
