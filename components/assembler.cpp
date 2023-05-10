@@ -100,7 +100,7 @@ void assembler::write_output_header()
   this->file_output_verilog << "//  - Registers Address length: " << this->register_size << "\n";
   this->file_output_verilog << "//  - Jump Address length: " << this->address_size << "\n";
   this->file_output_verilog << "//  - Instruction length: " << this->instruction_size << "\n";
-  this->file_output_verilog << "// HEX                  BINARY              Instruction in Assembly" << std::endl;
+  this->file_output_verilog << "// HEX                          BINARY              Instruction in Assembly" << std::endl;
 }
 
 void assembler::write_output_footer()
@@ -131,13 +131,14 @@ void assembler::assemble_code()
           this->file_output_verilog << std::setw(this->instruction_size/4) <<
                   std::setfill('0') << std::hex << std::get<1>(converted);
 
-          this->file_output_verilog << "\t\t\t//" << std::get<0>(converted) << "\t\t\t" << this->line_contents << std::endl;
+          this->file_output_verilog << std::dec << "\t\t\t//Line: " <<  this->current_line << "\t" << std::get<0>(converted) << "\t\t\t" << this->line_contents << std::endl;
           this->current_line++;
         }
       }
       //This code pads the rest of the program memory so it fits into a power of 2 sized prog_mem
-      size_t padding_lines = (1U << static_cast<size_t> (  ceilf(log2f(static_cast<float>(this->current_line))) ) ) - 1;
+      size_t padding_lines = (1U << static_cast<size_t> (  ceilf(log2f(static_cast<float>(this->current_line))) ) );
       this->file_output_verilog << "//Wrote " << std::dec << this->current_line << " line of machine code." << std::endl;
+      std::cout << "Padding lines: " << padding_lines << " a " << this->current_line << std::endl;
       this->file_output_verilog << "//Filling with " << padding_lines - this->current_line << " lines of NOPs" << std::endl ;
       auto no_op = this->convert_machine_code( "ADDI,$0,$0,0" );
       for (size_t i = 0; i < padding_lines - this->current_line; i++)

@@ -2,7 +2,7 @@
   "branches" : "absolute",
   "widths" :
   {
-    "opcodes"    : 4,
+    "opcodes"    : 6,
     "immediates" : 8,
     "addresses"  : 14,
     "registers" : 4
@@ -16,14 +16,14 @@
   },
   "instructions" :
   {
-    "ADD"   : 0,
-    "ADDI"  : 1,
+    "ADD"   : 4,
+    "ADDI"  : 6,
     "SUB"   : 4,
-    "SUBI"  : 5,
-    "MUL"   : 8,
-    "MULI"  : 9,
-
-    "BEQ"   : 6,
-    "JAL"   : 10
+    "SUBI"  : 6,
+    "MUL"   : 5,
+    "MULI"  : 7,
+    "WAIT"  : 8,
+    "DISP"  : 18,
+    "LOAD"  : 42
   }
 }
