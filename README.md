@@ -34,7 +34,7 @@ Usage of either command line arguments or passing file paths from within the pro
 
 Define your architectures instruction set and register information in *.json* format.
 
-You need to ensure that: 
+You need to ensure that:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-register information is held within a field named *registers*.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-instruction information is held within a field named *instructions*.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;-bus widths is held within a field named *widths*.<br>
