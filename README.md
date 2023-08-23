@@ -35,9 +35,9 @@ Usage of either command line arguments or passing file paths from within the pro
 Define your architectures instruction set and register information in *.json* format.
 
 You need to ensure that: 
-&nbsp; register information is held within a field named *registers*.<br>
-&nbsp; instruction information is held within a field named *instructions*.<br>
-&nbsp;instruction field widths is held within a field named *widths*.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-register information is held within a field named *registers*.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-instruction information is held within a field named *instructions*.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-bus widths is held within a field named *widths*.<br>
 You may choose if branches/jumps are either 'relative' or 'absolute' by the field named *branches*.<br>
 
 With respect to registers, a range may be specified and the tool will automatically expand the range.
